@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 // Account page component
 const AccountPage = ({ isLoggedIn }) => {
@@ -6,7 +8,11 @@ const AccountPage = ({ isLoggedIn }) => {
   const [shippingAddress, setShippingAddress] = useState('');
 
   const handleCreateAccount = () => {
-    setIsCreatingAccount(true);
+    console.log("Hello");
+    <Popup trigger={<button> Trigger</button>} position="right center">
+    <div>Popup content here !!</div>
+  </Popup>
+    // setIsCreatingAccount(true);
   };
 
   const handleSaveAccount = () => {

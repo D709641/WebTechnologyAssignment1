@@ -13,6 +13,9 @@ const CartPage = ({ products, removeFromCart }) => {
               console.log("inside "+products)
               // const item = products.find((product) => product.id === itemId);
               console.log(item)
+              if(item.quantity===0){
+                return
+              }
               return (
                 <>
                 <li key={item.id}>

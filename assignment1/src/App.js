@@ -4,6 +4,7 @@ import CartPage from './CartPage';
 import AccountPage from './AccountPage';
 import CommentsPage from './CommentsPage';
 import LoginElement from './LoginElement';
+import { BrowserRouter as Router, Switch, Route, Redirect,} from "react-router-dom";
 
 import './App.css';
 
