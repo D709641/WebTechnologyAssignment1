@@ -10,11 +10,11 @@ import './App.css';
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [products, setProducts] = useState([
-    { id: 1, name: 'Product 1', description: 'Description 1', image: 'product1.jpg', quantity: 0 },
-    { id: 2, name: 'Product 2', description: 'Description 2', image: 'product2.jpg', quantity: 0 },
-    { id: 3, name: 'Product 3', description: 'Description 3', image: 'product3.jpg', quantity: 0 },
-    { id: 4, name: 'Product 4', description: 'Description 4', image: 'product4.jpg', quantity: 0 },
-    { id: 5, name: 'Product 5', description: 'Description 5', image: 'product5.jpg', quantity: 0 },
+    { id: 1, name: 'Charger', description: 'Charger Description', image: './image1.jpeg', quantity: 0 },
+    { id: 2, name: 'Powerbank', description: 'Powerbank Description', image: './image2.jpeg', quantity: 0 },
+    { id: 3, name: 'Cable', description: 'Cable Description', image: './image3.jpeg', quantity: 0 },
+    { id: 4, name: 'Iphone', description: 'Iphone Description', image: './image4.jpeg', quantity: 0 },
+    { id: 5, name: 'Samsung Phone', description: 'Samsung Description', image: './image5.jpeg', quantity: 0 },
   ]);
   const [cartItems, setCartItems] = useState([]);
 
@@ -24,7 +24,7 @@ const App = () => {
 
   const addToCart = (productId) => {
     const updatedProducts = products.map((product) => {
-      if (product.id === productId) {
+      if (product.id == productId) {
         return {
           ...product,
           quantity: product.quantity + 1,
@@ -69,7 +69,8 @@ const App = () => {
       </header>
       <div className="content">
         <ProductListing products={products} addToCart={addToCart} />
-        <CartPage cartItems={cartItems} removeFromCart={removeFromCart} />
+        {/* <CartPage cartItems={cartItems} removeFromCart={removeFromCart} /> */}
+        <CartPage products={products} removeFromCart={removeFromCart} />
         <AccountPage isLoggedIn={isLoggedIn} />
         <CommentsPage />
       </div>
